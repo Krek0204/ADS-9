@@ -4,6 +4,13 @@
 #include <vector>
 #include <algorithm>
 
+
+int fact(int number) {
+  int result = 1;
+  for (int i = 1; i <= number; i++) result *= i;
+  return result;
+}
+
 struct Node {
   char data;
   std::vector<Node*> heirs;
@@ -51,12 +58,6 @@ class PMTree {
   int getPcount() { return pCount;
   }
 };
-
-int fact(int number) {
-  int result = 1;
-  for (int i = 1; i <= number; i++) result *= i;
-  return result;
-}
 
 std::vector<std::vector<char>> getAllPerms(PMTree &);
 std::vector<char> getPerm1(PMTree&, int);
