@@ -40,6 +40,7 @@ bool Perm1DLC(Node* root, std::vector<char>& res, int& cur) {
 
 
 std::vector<char> getPerm1(PMTree& tree, int pos) { std::vector<char> result;
+  if (pos < 1 || pos > tree.getPcount()) return {};
   int cur = pos;
   Node* rt = tree.getRoot();
   for (auto* it : rt->heirs) {
@@ -61,7 +62,9 @@ bool Perm2Finder(Node* root, std::vector<char>& res, int cnt) {
   return false;
 }
 
-std::vector<char> getPerm2(PMTree& tree, int pos) { int cnt = pos - 1;
+std::vector<char> getPerm2(PMTree& tree, int pos) { 
+  if (pos < 1 || pos > tree.getPcount()) return {};
+  int cnt = pos - 1;
   std::vector<char> result;
   Node* rt = tree.getRoot();
   for (auto& it : rt->heirs) {
