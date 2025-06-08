@@ -2,19 +2,18 @@
 #include <chrono>
 #include <iostream>
 #include <vector>
-#include<stdlib.h>
+#include <stdlib.h>
 #include <random>
 #include "tree.h"
 
 
 int main() {
-  srand(time(0));
   std::vector<char> alphabet;
   for (char ch = 'a'; ch <= 'j'; ch++) {
     alphabet.push_back(ch);
-    std::cout << "Current size of alphabet is " << alphabet.size() << std::endl;
     unsigned int seed = time(0);
-    int randompos = rand() % 26 + 1;
+    std::cout << "Current size of alphabet is " << alphabet.size() << std::endl;
+    int randompos = rand_r(&seed) % 26 + 1;
     PMTree tree(alphabet);
 
 
