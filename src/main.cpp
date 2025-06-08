@@ -1,8 +1,8 @@
 // Copyright 2022 NNTU-CS
+#include <stdlib.h>
 #include <chrono>
 #include <iostream>
 #include <vector>
-#include <stdlib.h>
 #include <random>
 #include "tree.h"
 
