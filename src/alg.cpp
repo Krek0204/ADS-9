@@ -41,7 +41,6 @@ bool Perm1DLC(Node* root, std::vector<char>& res, int& cur) {
 
 std::vector<char> getPerm1(PMTree& tree, int pos) { std::vector<char> result;
   int cur = pos;
-  std::vector<char> result;
   Node* rt = tree.getRoot();
   for (auto* it : rt->heirs) {
     if (Perm1DLC(rt, result, cur)) return result;
