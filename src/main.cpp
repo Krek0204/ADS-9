@@ -1,10 +1,11 @@
 // Copyright 2022 NNTU-CS
 #include <chrono>
 #include <iostream>
-#include "tree.h"
 #include <vector>
 #include<stdlib.h>
 #include <random>
+#include "tree.h"
+
 
 int main() {
   srand(time(0));
