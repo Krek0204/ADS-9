@@ -7,12 +7,12 @@
 struct Node {
   char data;
   std::vector<Node*> heirs;
-  Node(char dat) : data(dat) {}
+  explicit Node(char dat) : data(dat) {}
 };
 
 class PMTree {
  private:
-   Node* root;
+  Node* root;
   int pCount;
   void buildTree(Node* root, std::vector<char> symbols){
      std::sort(symbols.begin(), symbols.end());
@@ -23,10 +23,10 @@ class PMTree {
       next.erase(symbols.begin() + i);
        buildTree(temp, next);
     }
-  };
+  }
 
-  public:
-  PMTree(const std::vector<char> alphabet) {
+ public:
+  explicit PMTree(const std::vector<char> alphabet) {
     root = new Node(0);
     buildTree(root, alphabet);
     pCount = 1;
@@ -37,6 +37,12 @@ class PMTree {
   int getPcount() { return pCount;
   }
 };
+
+int fact(int number) {
+  int result = 1;
+  for (int i = 1; i <= number; i++) result *= i;
+  return result;
+}
 
 std::vector<std::vector<char>> getAllPerms(PMTree &);
 std::vector<char> getPerm1(PMTree&, int);
