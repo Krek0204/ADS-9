@@ -6,13 +6,6 @@
 
 #include "tree.h"
 
-std::vector<std::vector<char>> getAllPerms(PMTree& tree) {
-  std::vector<char> current;
-  std::vector<std::vector<char>> result;
-  gettingAllPerms(tree.getRoot(), result, current);
-  return result;
-}
-
 void gettingAllPerms(Node* root, std::vector<std::vector<char>>& res,
                      std::vector<char> cur) {
   if (root->data != 0) cur.push_back(root->data);
@@ -23,6 +16,14 @@ void gettingAllPerms(Node* root, std::vector<std::vector<char>>& res,
   }
   if (!cur.empty() && root->data != 0) cur.pop_back();
 }
+
+std::vector<std::vector<char>> getAllPerms(PMTree& tree) {
+  std::vector<char> current;
+  std::vector<std::vector<char>> result;
+  gettingAllPerms(tree.getRoot(), result, current);
+  return result;
+}
+
 
 std::vector<char> getPerm1(PMTree& tree, int pos) {
   std::vector<std::vector<char>> perms = getAllPerms(tree);
