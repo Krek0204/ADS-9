@@ -23,7 +23,7 @@ class PMTree {
   int pCount;
   void buildTree(Node* root, std::vector<char>& symbols) {
     if (symbols.empty()) return;
-    for (char c : symbols){
+    for (char c : symbols) {
       root->heirs.push_back(new Node(c));
       std::vector<char> newR;
       for (char ch : symbols) {
