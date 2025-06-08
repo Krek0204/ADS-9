@@ -1,15 +1,10 @@
 // Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TREE_H_
 #define INCLUDE_TREE_H_
-#include <vector>
 #include <algorithm>
+#include <vector>
 
-
-int fact(int number) {
-  int result = 1;
-  for (int i = 1; i <= number; i++) result *= i;
-  return result;
-}
+int fact(int number);
 
 struct Node {
   char data;
@@ -53,13 +48,11 @@ class PMTree {
       buildTree(it, ripo);
     }
   }
-  Node* getRoot() { return root;
-  }
-  int getPcount() { return pCount;
-  }
+  Node* getRoot() { return root; }
+  int getPcount() { return pCount; }
 };
 
-std::vector<std::vector<char>> getAllPerms(PMTree &);
+std::vector<std::vector<char>> getAllPerms(PMTree&);
 std::vector<char> getPerm1(PMTree&, int);
 std::vector<char> getPerm2(PMTree&, int);
 
