@@ -62,7 +62,7 @@ bool Perm2Finder(Node* root, std::vector<char>& res, int cnt) {
   return false;
 }
 
-std::vector<char> getPerm2(PMTree& tree, int pos) { 
+std::vector<char> getPerm2(PMTree& tree, int pos) {
   if (pos < 1 || pos > tree.getPcount()) return {};
   int cnt = pos - 1;
   std::vector<char> result;
