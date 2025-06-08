@@ -4,8 +4,15 @@
 #include <iostream>
 #include <locale>
 #include <vector>
+
 #include "tree.h"
 
+
+int fact(int number) {
+  int result = 1;
+  for (int i = 1; i <= number; i++) result *= i;
+  return result;
+}
 void gettingAllPerms(Node* root, std::vector<std::vector<char>>& res,
                      std::vector<char> cur) {
   if (root->data != 0) cur.push_back(root->data);
@@ -38,8 +45,8 @@ bool Perm1DLC(Node* root, std::vector<char>& res, int& cur) {
   return false;
 }
 
-
-std::vector<char> getPerm1(PMTree& tree, int pos) { std::vector<char> result;
+std::vector<char> getPerm1(PMTree& tree, int pos) {
+  std::vector<char> result;
   if (pos < 1 || pos > tree.getPcount()) return {};
   int cur = pos;
   Node* rt = tree.getRoot();
