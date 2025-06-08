@@ -46,5 +46,6 @@ int fact(int number) {
 
 std::vector<std::vector<char>> getAllPerms(PMTree &);
 std::vector<char> getPerm1(PMTree&, int);
+std::vector<char> getPerm2(PMTree&, int);
 
 #endif  // INCLUDE_TREE_H_
